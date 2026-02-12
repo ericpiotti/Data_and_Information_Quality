@@ -1,4 +1,4 @@
-**Data Quality & Cleaning Pipeline**
+# Data Quality & Cleaning Pipeline 
 
 This repository contains the complete Data Quality and Cleaning pipeline applied to the official registry of public establishments (bars, restaurants, cafes) in the Municipality of Milan.
 
@@ -12,7 +12,7 @@ Davide Rodler
 
 Academic Year: 2025-2026
 
-**🛠️ Tech Stack & Libraries**
+## 🛠️ Tech Stack & Libraries
 
 The pipeline was implemented in Python using a specialized stack for data manipulation, profiling, and machine learning:
 
@@ -26,7 +26,7 @@ Regex (re): For pattern matching and string extraction (e.g., house numbers).
 
 Levenshtein / FuzzyWuzzy: For calculating string similarity during the deduplication phase.
 
-**📝 Project Overview**
+## 📝 Project Overview
 The objective was to address inherent noise and missingness in real-world open data, targeting two primary dimensions: Completeness and Consistency.
 
 The Dataset
@@ -35,12 +35,12 @@ Source: Milan Open Data Portal
 
 Initial Status: 6,904 records with significant encoding errors, ~49% missing values in business names, and inconsistencies between street addresses and administrative zones.
 
-**🔍 Pipeline Implementation**
+## 🔍 Pipeline Implementation
 1. Profiling & Assessment
 
 Used ydata-profiling to identify corrupted headers (encoding issues like þÿ) and map the distribution of missing values across the dataset.
 
-**2. Normalization & Standardization**
+## 2. Normalization & Standardization
 
 Text Cleaning: Converted all strings to lowercase and removed leading/trailing whitespaces.
 
@@ -48,7 +48,7 @@ Encoding Fixes: Repaired character corruption across categorical columns.
 
 Category Wrangling: Grouped complex business descriptions into macro-categories (e.g., "Bar", "Restaurant") for better analysis.
 
-**3. Error Detection & Correction**
+## 3. Error Detection & Correction
 
 Logical Imputation: Extracted missing house numbers directly from street name strings using Regex.
 
@@ -56,7 +56,7 @@ KNN Imputation: Leveraged scikit-learn to estimate missing "Surface Area" values
 
 Functional Dependencies: Verified that Zip Codes and Street Numbers correctly corresponded to the assigned administrative Zones.
 
-**4. Data Deduplication**
+## 4. Data Deduplication
 
 To identify non-exact duplicates (e.g., "Pizzeria Da Mario" vs. "Pizz. Da Mario"):
 
